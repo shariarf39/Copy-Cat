@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="#CDFFFFFF"
+    android:id="@+id/drawer"
+
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:titleTextColor="@color/black"
+
+
+        >
+
+        <ImageView
+            android:id="@+id/share_app"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/baseline_share_24"
+            android:layout_gravity="right"
+            android:layout_marginRight="15dp"
+
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <RelativeLayout
+        android:id="@+id/re_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_below="@+id/toolbar"
+        >
+        <TextView
+            android:id="@+id/enter_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aa Enter Text"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="15dp"
+            />
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/enter_txt"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@+id/clearButton"
+            android:background="@drawable/border"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+
+
+            />
+
+        <ImageView
+            android:id="@+id/clearButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:visibility="invisible"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="8dp"
+            android:layout_marginTop="25dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel" />
+
+
+
+
+        <ImageView
+            android:id="@+id/repet_img"
+            android:layout_below="@+id/autoCompleteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/baseline_repeat_24"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Repetition"
+            android:layout_below="@+id/autoCompleteTextView"
+            android:layout_toRightOf="@+id/repet_img"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            />
+
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompletesize"
+            android:layout_width="80dp"
+            android:layout_below="@+id/repet_img"
+            android:layout_height="50dp"
+
+            android:inputType="number"
+            android:background="@drawable/border"
+            android:layout_marginLeft="15dp"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+
+            />
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/repet_img"
+            android:layout_centerHorizontal="true"
+            android:background="@color/black"
+
+            />
+
+
+
+        <CheckBox
+            android:id="@+id/checkbox_re"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/repet_img"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:text="Repeat in New line"
+            android:textColor="@color/black"
+
+
+            />
+
+        <CheckBox
+            android:id="@+id/checkbox_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/checkbox_re"
+           android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:text="New line Count      "
+            android:textColor="@color/black"
+
+
+            />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/autoCompletesize"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="25dp"
+            android:layout_marginLeft="15dp"
+            app:cardBackgroundColor="#6EEC00"
+            android:foregroundGravity="center"
+            android:id="@+id/submit"
+            android:layout_marginBottom="10dp"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                >
+            <ImageView
+                android:id="@+id/sub_img"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/outline_task_alt_24"
+                android:gravity="center"
+                android:layout_centerVertical="true"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Repeat Text"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/sub_img"
+                android:textColor="@color/white"
+
+
+                />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_below="@+id/re_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+            <ImageView
+                android:id="@+id/share"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/baseline_share_24"
+
+                />
+
+                <ImageView
+                    android:id="@+id/copy"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_toLeftOf="@+id/share"
+                android:src="@drawable/baseline_content_copy_24"
+                    android:layout_marginRight="10dp"
+
+                />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/output"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:text="I am a Copy Cat🤪🤪🤪\n\nI can repeat anything\n\nTry Me....."
+                android:textIsSelectable="true"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+    </RelativeLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/navmenu"
+        app:menu="@menu/iconmenu"
+        app:headerLayout="@layout/navheader"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        />
+
+
+</androidx.drawerlayout.widget.DrawerLayout >
+
