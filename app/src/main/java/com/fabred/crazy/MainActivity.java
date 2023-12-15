@@ -7,10 +7,12 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.ActivityNotFoundException;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -72,8 +74,19 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if(item.getItemId()==R.id.menu_home){
-                    Toast.makeText(MainActivity.this, "Policy", Toast.LENGTH_SHORT).show();
+                    Uri url = Uri.parse("https://sites.google.com/view/copycatpolicy");
+                    Intent intent = new Intent(Intent.ACTION_VIEW, url);
+                    startActivity(intent);
+                    Toast.makeText(MainActivity.this, "Privacy Policy", Toast.LENGTH_SHORT).show();
                     drawerLayout.closeDrawer(GravityCompat.START);
+                }
+                if(item.getItemId()==R.id.menu_rate){
+                    try{
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id="+getPackageName())));
+                    }
+                    catch (ActivityNotFoundException e){
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id="+getPackageName())));
+                    }
                 }
 
 
@@ -181,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
                 String text_size = autoCompletesize.getText().toString();
 
                 if (TextUtils.isEmpty(text)) {
-                    autoCompleteTextView.setError("Enter your name");
+                    autoCompleteTextView.setError("Enter your Script");
                     autoCompleteTextView.requestFocus();
                     checkBox_re.setChecked(false);
                     checkBox_count.setChecked(false);

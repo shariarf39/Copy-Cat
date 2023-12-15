@@ -4,7 +4,15 @@
 
     <item android:id="@+id/menu_home"
         android:title="Privacy Policy"
+        android:icon="@drawable/baseline_policy_24"
 
+
+        >
+    </item>
+
+    <item android:id="@+id/menu_rate"
+        android:title="Rate Us"
+        android:icon="@drawable/baseline_star_rate_24"
         >
 
     </item>
